@@ -1,0 +1,301 @@
+<UserControl x:Class="AiTokenBot.Views.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AiTokenBot.Views"
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             mc:Ignorable="d"
+             d:DesignHeight="550" d:DesignWidth="860">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,24">
+            <TextBlock Text="主页" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+            <TextBlock Text="概览与统计信息" FontSize="13" Margin="0,4,0,0"
+                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                       Opacity="0.6"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Status Summary Row -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Padding="20" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="总资产" FontSize="12" Opacity="0.6"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="$ 8,491.32" FontSize="22" FontWeight="SemiBold" Margin="0,6,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2" Padding="20" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="今日盈亏" FontSize="12" Opacity="0.6"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="+ $ 187.50" FontSize="22" FontWeight="SemiBold" Margin="0,6,0,0"
+                                       Foreground="#4CAF50"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="4" Padding="20" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="累计收益" FontSize="12" Opacity="0.6"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="+ $ 2,831.04" FontSize="22" FontWeight="SemiBold" Margin="0,6,0,0"
+                                       Foreground="#4CAF50"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Secondary Stats -->
+                <Grid Margin="0,12,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Padding="20" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="活跃机器人" FontSize="12" Opacity="0.6"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <Ellipse Width="10" Height="10" Fill="#4CAF50" VerticalAlignment="Center"/>
+                                <TextBlock Text="3 / 3 在线" FontSize="20" FontWeight="SemiBold" Margin="10,0,0,0"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2" Padding="20" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="胜率 (最近 30 天)" FontSize="12" Opacity="0.6"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                <TextBlock Text="67.8%" FontSize="20" FontWeight="SemiBold"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Text="  (42 胜 / 20 负)" FontSize="13" Opacity="0.5" VerticalAlignment="Bottom" Margin="8,0,0,3"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Robot Status Cards -->
+                <TextBlock Text="机器人状态" FontSize="14" FontWeight="SemiBold" Margin="0,24,0,12"
+                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Padding="16" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="8" Height="8" Fill="#4CAF50" VerticalAlignment="Center"/>
+                                <TextBlock Text="套利猎手" FontSize="13" FontWeight="SemiBold" Margin="8,0,0,0"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </StackPanel>
+                            <TextBlock Text="SOL/USDC 套利" FontSize="11" Opacity="0.5" Margin="0,6,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="今日 + $ 92.10" FontSize="13" Foreground="#4CAF50" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="2" Padding="16" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="8" Height="8" Fill="#4CAF50" VerticalAlignment="Center"/>
+                                <TextBlock Text="趋势追踪" FontSize="13" FontWeight="SemiBold" Margin="8,0,0,0"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </StackPanel>
+                            <TextBlock Text="BONK/JUP 波段" FontSize="11" Opacity="0.5" Margin="0,6,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="今日 + $ 45.20" FontSize="13" Foreground="#4CAF50" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="4" Padding="16" CornerRadius="8"
+                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                            BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                            BorderThickness="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="8" Height="8" Fill="#FFC107" VerticalAlignment="Center"/>
+                                <TextBlock Text="信号侦察" FontSize="13" FontWeight="SemiBold" Margin="8,0,0,0"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </StackPanel>
+                            <TextBlock Text="全代币信号监测" FontSize="11" Opacity="0.5" Margin="0,6,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Text="今日 + $ 50.20" FontSize="13" Foreground="#FFC107" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- Positions -->
+                <Border Margin="0,16,0,0" Padding="20" CornerRadius="8"
+                        Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                        BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="当前持仓" FontSize="14" FontWeight="SemiBold"
+                                   Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        <Grid Margin="0,12,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <!-- Table Header -->
+                            <Grid Grid.Row="0" Margin="0,0,0,8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="代币" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Grid.Column="1" Text="持有量" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Grid.Column="2" Text="均价" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Grid.Column="3" Text="现价" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Grid.Column="4" Text="盈亏" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                <TextBlock Grid.Column="5" Text="机器人" FontSize="12" Opacity="0.5"
+                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            </Grid>
+                            <!-- Table Body -->
+                            <ItemsControl Grid.Row="1">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Padding="0,10" Margin="0,0,0,2"
+                                                BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer2BorderBrush}}"
+                                                BorderThickness="0,0,0,1">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="110"/>
+                                                    <ColumnDefinition Width="110"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Text="{Binding Token}" FontSize="13" FontWeight="SemiBold"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Amount}" FontSize="13"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                                <TextBlock Grid.Column="2" Text="{Binding AvgPrice}" FontSize="13"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding CurrentPrice}" FontSize="13"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                                <TextBlock Grid.Column="4" Text="{Binding PnL}" FontSize="13" FontWeight="SemiBold"
+                                                           Foreground="{Binding PnLBrush}"/>
+                                                <TextBlock Grid.Column="5" Text="{Binding Robot}" FontSize="13"
+                                                           Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" Opacity="0.6"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsSource>
+                                    <x:Array Type="{x:Type local:PositionItem}">
+                                        <local:PositionItem Token="SOL" Amount="3.25" AvgPrice="$ 141.50" CurrentPrice="$ 142.30" PnL="+ $ 2.60" Robot="套利猎手"/>
+                                        <local:PositionItem Token="BONK" Amount="12,000" AvgPrice="$ 0.02" CurrentPrice="$ 0.022" PnL="+ $ 24.00" Robot="趋势追踪"/>
+                                        <local:PositionItem Token="JUP" Amount="85" AvgPrice="$ 1.72" CurrentPrice="$ 1.68" PnL="- $ 3.40" Robot="趋势追踪"/>
+                                        <local:PositionItem Token="USDC" Amount="2,100" AvgPrice="$ 1.00" CurrentPrice="$ 1.00" PnL="$ 0.00" Robot="套利猎手"/>
+                                    </x:Array>
+                                </ItemsControl.ItemsSource>
+                            </ItemsControl>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Recent Activity -->
+                <Border Margin="0,16,0,0" Padding="20" CornerRadius="8"
+                        Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                        BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="最近活动" FontSize="14" FontWeight="SemiBold"
+                                   Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        <ItemsControl Margin="0,12,0,0">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="12,8" Margin="0,0,0,4"
+                                            Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"
+                                            CornerRadius="4">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding Type}" FontSize="12"
+                                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" Opacity="0.6"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Description}" Margin="16,0"
+                                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding Time}" FontSize="12"
+                                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" Opacity="0.5"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsSource>
+                                <x:Array Type="{x:Type local:ActivityItem}">
+                                    <local:ActivityItem Type="买入" Description="[套利猎手] 以 142.30 USDC 买入 0.85 SOL" Time="2 分钟前"/>
+                                    <local:ActivityItem Type="卖出" Description="[趋势追踪] 以 0.027 SOL 卖出 1200 BONK" Time="15 分钟前"/>
+                                    <local:ActivityItem Type="信号" Description="[信号侦察] 检测到 JUP 价格异常波动" Time="32 分钟前"/>
+                                    <local:ActivityItem Type="买入" Description="[套利猎手] 以 141.80 USDC 买入 0.50 SOL" Time="1 小时前"/>
+                                </x:Array>
+                            </ItemsControl.ItemsSource>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

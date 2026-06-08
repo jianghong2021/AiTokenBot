@@ -1,0 +1,131 @@
+<UserControl x:Class="AiTokenBot.Views.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:AiTokenBot.Views"
+             xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,24">
+            <TextBlock Text="设置" FontSize="24" FontWeight="SemiBold"
+                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+            <TextBlock Text="API 配置、主题偏好与全局选项" FontSize="13" Margin="0,4,0,0"
+                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                       Opacity="0.6"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- API Card -->
+                <Border Padding="20" CornerRadius="8"
+                        Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                        BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="API 配置" FontSize="14" FontWeight="SemiBold"
+                                   Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        <Grid Margin="0,16,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Solana RPC URL" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBox x:Name="TbRpcUrl" Grid.Row="0" Grid.Column="1"
+                                     Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                                     Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"
+                                     BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer2BorderBrush}}"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Jupiter API URL" VerticalAlignment="Center" Margin="0,12,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBox x:Name="TbJupiterUrl" Grid.Row="1" Grid.Column="1" Margin="0,12,0,0"
+                                     Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                                     Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"
+                                     BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer2BorderBrush}}"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Jupiter API Key" VerticalAlignment="Center" Margin="0,12,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <PasswordBox x:Name="TbJupiterKey" Grid.Row="2" Grid.Column="1" Margin="0,12,0,0"
+                                         Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                                         Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"
+                                         BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer2BorderBrush}}"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Theme Card -->
+                <Border Margin="0,16,0,0" Padding="20" CornerRadius="8"
+                        Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                        BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="主题设置" FontSize="14" FontWeight="SemiBold"
+                                   Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        <Grid Margin="0,16,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="界面主题" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <ComboBox x:Name="CbTheme" Grid.Column="1" Width="140" HorizontalAlignment="Left"
+                                      Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"
+                                      Background="{DynamicResource {x:Static adonisUi:Brushes.Layer2BackgroundBrush}}"
+                                      BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer2BorderBrush}}">
+                                <ComboBoxItem Content="浅色" Tag="light"/>
+                                <ComboBoxItem Content="深色" Tag="dark"/>
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Notifications -->
+                <Border Margin="0,16,0,0" Padding="20" CornerRadius="8"
+                        Background="{DynamicResource {x:Static adonisUi:Brushes.Layer1BackgroundBrush}}"
+                        BorderBrush="{DynamicResource {x:Static adonisUi:Brushes.Layer1BorderBrush}}"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="通知设置" FontSize="14" FontWeight="SemiBold"
+                                   Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        <Grid Margin="0,16,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="交易通知" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <CheckBox x:Name="CbNotifyTrade" Grid.Row="0" Grid.Column="1"
+                                      Content="交易完成时发送通知"
+                                      Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="异常告警" VerticalAlignment="Center" Margin="0,12,0,0"
+                                       Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                            <CheckBox x:Name="CbNotifyAlert" Grid.Row="1" Grid.Column="1"
+                                      Content="交易异常时发送告警" Margin="0,12,0,0"
+                                      Foreground="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Button Content="保存设置" Width="130" Height="40" Margin="0,24,0,0" HorizontalAlignment="Left"
+                        Click="OnSaveClick"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
